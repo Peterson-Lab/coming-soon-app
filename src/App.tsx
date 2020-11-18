@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import {} from "react-bootstrap";
+import { Row, Container, Jumbotron, Col } from "react-bootstrap";
 
 function App(): JSX.Element {
   return (
