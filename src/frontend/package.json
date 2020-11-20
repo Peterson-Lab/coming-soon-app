@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "buildProd": "react-scripts build && rm -rf ../../frontEndBuild* && mkdir ../../frontEndBuild && mv ./build ../../frontEndBuild",
+    "buildProd": "react-scripts build && rm -rf ../../frontEndBuild* && mkdir ../../frontEndBuild && mv ./build/* ../../frontEndBuild/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
