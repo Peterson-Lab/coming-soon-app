@@ -16,7 +16,7 @@ export default function EmailForm(): JSX.Element {
 
   return (
     <Row align="middle" justify="center">
-      <Col span={12}>
+      <Col xs={20} md={16} lg={12}>
         <Input.Search
           placeholder="Email address"
           enterButton="Sign Up"
