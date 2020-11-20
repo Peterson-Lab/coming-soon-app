@@ -1,9 +1,12 @@
 import React from "react";
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
+import { useForm, Controller } from "react-hook-form";
 
 export default function EmailForm(): JSX.Element {
+  const { control, handleSubmit } = useForm();
+
   const onSubmit = (values: any) => {
-    console.log("Success:", values);
+    console.log(`Success: ${values}`);
   };
 
   const onChangeBox = (e: any) => {
