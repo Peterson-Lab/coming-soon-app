@@ -25,6 +25,8 @@
     "backendBuild": "yarn tsc"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node": "^15.2.1",
+    "react-scripts": "^4.0.0"
   }
 }
