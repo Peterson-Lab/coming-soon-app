@@ -21,8 +21,8 @@
   },
   "scripts": {
     "start-dev": "nodemon --config \"./util/nodemon.json\"/",
-    "build": "yarn tsc",
-    "fullBuild": "rm -rf build/* && yarn run build && cd ./src/frontend && yarn run build"
+    "build": "rm -rf build/* && yarn run backendBuild && cd ./src/frontend && yarn run build",
+    "backendBuild": "yarn tsc"
   },
   "dependencies": {
     "express": "^4.17.1"
