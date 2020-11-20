@@ -23,6 +23,7 @@
   "scripts": {
     "start-dev": "nodemon --config \"./util/nodemon.json\"/",
     "build": "rm -rf build/* && yarn run backendBuild && mkdir ./build/public && cp -R ./frontEndBuild/* ./build/public/",
+    "start": "node ./build/server.js",
     "frontendBuildProd": "cd ./src/frontend && yarn run buildProd",
     "backendBuild": "yarn tsc"
   },
