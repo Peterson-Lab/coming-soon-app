@@ -1,50 +1,29 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Col, Form } from "react-bootstrap";
+import React from "react";
+import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 
 export default function EmailForm(): JSX.Element {
-  const [email, setEmail] = useState("");
-
-  const validateForm = () => {
-    return email.length > 0;
+  const onSubmit = (values: any) => {
+    console.log("Success:", values);
   };
 
-  async function handleSubmit(event: any) {
-    event.preventDefault();
-  }
+  const onChangeBox = (e: any) => {
+    console.log(`checked = ${e.target.checked}`);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
 
   return (
-    <Form>
-      <Form.Row className="align-items-center justify-content-center">
-        <Col xs="8">
-          <Form.Group controlId="formEmail" className="text-left">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-        </Col>
-      </Form.Row>
-      <Form.Row className="align-items-center justify-content-center">
-        <Col xs="8">
-          <Form.Check
-            type="checkbox"
-            label="Do you want more information about our studies?"
-            id="more-info"
-          />
-        </Col>
-      </Form.Row>
-      <Button
-        variant="primary"
-        type="submit"
-        className="my-3"
-        disabled={!validateForm()}
-      >
-        Sign Up
-      </Button>
-    </Form>
+    <Row align="middle" justify="center">
+      <Col span={12}>
+        <Input.Search
+          placeholder="Email address"
+          enterButton="Sign Up"
+          size="large"
+          onSearch={onSubmit}
+        ></Input.Search>
+      </Col>
+    </Row>
   );
 }

@@ -14,8 +14,18 @@ app.get("/api/getList", (req: Request, res: Response) => {
 });
 
 app.get("/api", (req: Request, res: Response) => {
-  res.send("API!");
+  res.send({ hello: "API!" });
 });
+
+app.post(
+  "/api/emailsignup",
+  (req: Request, res: Response) => {
+    console.log(req.body);
+  },
+  (req, res) => {
+    res.send("signed up!");
+  }
+);
 
 // Handles any requests that don't match the ones above
 app.get("*", (req: Request, res: Response) => {

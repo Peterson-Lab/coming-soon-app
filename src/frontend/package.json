@@ -11,6 +11,8 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
+    "antd": "^4.8.4",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "bulma": "^0.9.1",
     "node-sass": "4.14.1",
@@ -27,11 +29,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "buildProd": "react-scripts build && rm -rf ../../frontEndBuild* && mkdir ../../frontEndBuild && mv ./build/* ../../frontEndBuild/",
+    "buildProd": "react-scripts build && rm -rf ../../frontend-build* && mkdir ../../frontend-build && mv ./build/* ../../frontend-build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy":"http://localhost:5000",
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",

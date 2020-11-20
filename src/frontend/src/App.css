@@ -1,6 +1,28 @@
-.App{
+@import '~antd/dist/antd.css';
+
+.site-layout-content {
+    min-height: 280px;
+    padding: 24px;
+    background: #94CDF0;
+}
+.App {
+    background: #94CDF0;
+    height: 100vh;
+}
+.logo {
 }
 
-.container {
+[data-theme="dark"] .site-layout-content {
+      background: #141414;
+}
+.row {
+    width: 100vw;
     height: 100vh;
+}
+
+.hero {
+    text-align: center;
+    background: white;
+    padding: 50px 10px;
+
 }
