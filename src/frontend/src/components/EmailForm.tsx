@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
-import { useForm, Controller } from "react-hook-form";
+import axios from "axios";
 
 export default function EmailForm(): JSX.Element {
-  const { control, handleSubmit } = useForm();
-
-  const onSubmit = (values: any) => {
-    console.log(`Success: ${values}`);
+  const [loading, setLoading] = useState(false);
+  const onSubmit = (value: any) => {
+    setLoading(true);
+    axios.post("/api/emailsignup", { value }).then((res) => {
+      alert(`Success: ${value}`);
+      setLoading(false);
+    });
   };
 
   const onChangeBox = (e: any) => {
@@ -25,6 +28,7 @@ export default function EmailForm(): JSX.Element {
           enterButton="Sign Up"
           size="large"
           onSearch={onSubmit}
+          loading={loading}
         ></Input.Search>
       </Col>
     </Row>
