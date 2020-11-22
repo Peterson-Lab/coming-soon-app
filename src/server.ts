@@ -1,7 +1,24 @@
 import express, { Response, Request } from "express";
 import path from "path";
+//import mailchimp from "@mailchimp/mailchimp_marketing";
 
 const app = express();
+
+/*mailchimp.setConfig({
+  accessToken: "YOUR_ACCESS_TOKEN",
+  server: "YOUR_SERVER_PREFIX",
+});
+
+const listId = "";
+async function sendEmailToMailchimp(email: string): Promise<any> {
+  return mailchimp.lists.addListMember(listId, {
+    email_address: email,
+    status: "subscribed",
+  });
+} */
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, "/public/")));
@@ -17,9 +34,10 @@ app.get("/api", (req: Request, res: Response) => {
   res.send({ hello: "API!" });
 });
 
-app.post("/api/emailsignup", (req: Request, res: Response) => {
-  console.log(req.body);
-  res.send("signed up");
+app.post("/api/emailsignup", async (req: Request, res: Response) => {
+  console.log(req.body.email);
+  //const response = await sendEmailToMailchimp(req.body.email);
+  res.send("signed up!");
 });
 
 // Handles any requests that don't match the ones above

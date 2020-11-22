@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.less";
 import { Row, Col, Card, Image, Form, Divider } from "antd";
 import Helmet from "react-helmet";
 import logo from "./assets/logo.png";

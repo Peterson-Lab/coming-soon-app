@@ -4,10 +4,10 @@ import axios from "axios";
 
 export default function EmailForm(): JSX.Element {
   const [loading, setLoading] = useState(false);
-  const onSubmit = (value: any) => {
+  const onSubmit = (email: any) => {
     setLoading(true);
-    axios.post("/api/emailsignup", { value }).then((res) => {
-      alert(`Success: ${value}`);
+    axios.post("/api/emailsignup", { email: email }).then((res) => {
+      alert(`Success: ${email}`);
       setLoading(false);
     });
   };
